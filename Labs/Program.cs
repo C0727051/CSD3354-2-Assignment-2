@@ -12,4 +12,21 @@ namespace Labs
         {
         }
     }
+
+    public class DelegateExercises
+    {
+        // Student ID:Manveer Singh Walia  Student ID:C0727051
+        //Student ID:Jashandeep Singh Dhillon  Student ID:C0725713
+        public delegate void MyDelegate();
+        void Method1()
+        {
+            Console.WriteLine("Method1");
+            Console.ReadLine();
+        }
+        public void Method2()
+        {
+            MyDelegate myDelegate = new MyDelegate(Method1);
+            myDelegate();
+        }
+    }
 }
