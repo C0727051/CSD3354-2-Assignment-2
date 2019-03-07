@@ -17,7 +17,8 @@ namespace Labs
     {
         // Student ID:Manveer Singh Walia  Student ID:C0727051
         //Student ID:Jashandeep Singh Dhillon  Student ID:C0725713
-        public delegate void MyDelegate();
+        // Assignment2
+        // March 7,2019
         void Method1()
         {
             Console.WriteLine("Method1");
