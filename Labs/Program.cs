@@ -24,17 +24,33 @@ namespace Labs
 
         }
     public class DelegateExercises
-    {
-        public delegate int MyDelegate();
+    
+        {
+             public delegate int MyDelegate(int intValue);
 
 
 
-        void Method1()
+        public int Method1(int intMethod1)
 
         {
 
-            System.Console.WriteLine("MyDelegate");
+            return intMethod1*2;
 
+        }
+
+
+
+        public int Method2(int intMethod2)
+
+        {
+
+            return intMethod2*10;
+
+        }
+        public void Method4(MyDelegate myDelegate)
+        {
+            int result = myDelegate(10);
+            Console.WriteLine(result);
         }
 
 
@@ -44,13 +60,10 @@ namespace Labs
         {
 
             MyDelegate myDelegate = new MyDelegate(Method1);
-            myDelegate();
+            Method4(myDelegate);
+            myDelegate = new MyDelegate(Method2);
+            Method4(myDelegate);
 
         }
-
-
-
-       
     }
 }
-
