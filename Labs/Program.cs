@@ -6,36 +6,66 @@ using System.Threading.Tasks;
 
 namespace Labs
 {
+    // Student ID:Manveer Singh Walia  Student ID:C0727051
+    //Student ID:Jashandeep Singh Dhillon  Student ID:C0725713
+    // Assignment2
+    // March 7,2019
+ class Program
+        {
+            static void Main(string[] args)
+            {
+                DelegateExercises delegateExercises = new DelegateExercises();
+
+                delegateExercises.Method3();
 
 
+            }
+
+
+        }
     public class DelegateExercises
     {
-        // Student ID:Manveer Singh Walia  Student ID:C0727051
-        //Student ID:Jashandeep Singh Dhillon  Student ID:C0725713
-        // Assignment2
-        // March 7,2019
-        public delegate void MyDelegate();
-        void Method1(int i)
-        {
-            Console.WriteLine("Method1");
-            Console.ReadLine();
-        }
-        public void Method2()
-        {
-            MyDelegate myDelegate = new MyDelegate(Method2);
-            myDelegate();
-        }
-    }
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            DelegateExercises delegateExercises = new DelegateExercises();
+        public delegate int MyDelegate(int intValue);
 
-            delegateExercises.Method2();
+
+
+        public int Method1(int intMethod1)
+
+        {
+
+            return intMethod1 * 2;
+
         }
 
 
+
+        public int Method2(int intMethod2)
+
+        {
+
+            return intMethod2 * 10;
+
+        }
+
+
+
+        public void Method3()
+
+        {
+
+            MyDelegate myDelegate = new MyDelegate(Method1);
+
+            int result1 = myDelegate(10);
+
+            System.Console.WriteLine(result1);
+
+            myDelegate = new MyDelegate(Method2);
+
+            int result2 = myDelegate(10);
+
+            System.Console.WriteLine(result2);
+
+        }
     }
 }
 
